@@ -36,6 +36,7 @@ public class Posts {
     private Set<Categorias> categorias;
 
     private String titulo;
+
     private String metaDescripcion;
     @Column(unique = true, nullable = false)
     private String slug;
@@ -45,7 +46,7 @@ public class Posts {
     private LocalDateTime fechaPublicacion;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "tipo_bloque", length = 50)
+    @Column(name = "estado", length = 50)
     private PostStatus estado;
 
     @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, orphanRemoval = true)
